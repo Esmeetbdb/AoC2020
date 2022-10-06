@@ -1,0 +1,10 @@
+input = []
+goal = 2020
+for line in open('advent_of_code_1a.txt'):
+    input.append(int(line.strip()))
+
+for i, number in enumerate(input[:-1]):
+    complementary = goal - number
+    if complementary in input[i+1:]:
+        print(number*complementary)
+        break
