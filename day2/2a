@@ -1,0 +1,19 @@
+#Puzzle 2a
+input = []
+for line in open('advent_of_code_2a.txt'):
+    input.append(line.strip())
+#print(input)
+
+
+counter = 0
+for i in input:
+    k = i.split(': ')
+    x = k[0].split(' ')
+    y = x[0].split('-')
+    min_count = int(y[0])
+    max_count = int(y[1])
+    letter = x[1]
+   
+    if k[1].count(letter) >= min_count and k[1].count(letter) <= max_count:
+        counter += 1
+print(counter)
