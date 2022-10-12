@@ -1,0 +1,19 @@
+#Puzzle 2b
+input = []
+for line in open('advent_of_code_2a.txt'):
+    input.append(line.strip())
+#print(input)
+
+
+counter = 0
+for i in input:
+    k = i.split(': ')
+    x = k[0].split(' ')
+    y = x[0].split('-')
+    index_1 = int(y[0])-1
+    index_2 = int(y[1])-1
+    letter = x[1]
+
+    if k[1][index_1] == letter and k[1][index_2] != letter or k[1][index_2] == letter and k[1][index_1] != letter:
+        counter+=1
+print(counter)
